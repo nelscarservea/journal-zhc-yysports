@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 从查询到参照，延伸体育资讯的边界</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fff0e0 0%, #fce4c8 40%, #f9dbb0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 860px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 36px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 20px 40px -12px rgba(170, 110, 40, 0.25), 0 8px 16px rgba(0,0,0,0.03);
+            transition: box-shadow 0.25s ease;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .card {
+                padding: 1.8rem 1.4rem;
+                border-radius: 28px;
+            }
+        }
+
+        .hero {
+            margin-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #6a3d1a;
+            background: linear-gradient(135deg, #7f4a1e, #a35f2b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #7d5a3a;
+            border-left: 3px solid #d99f6b;
+            padding-left: 1rem;
+            margin-top: 0.2rem;
+            opacity: 0.85;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #4d2c12;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 3px;
+            background: #eac29a;
+            border-radius: 6px;
+            margin-top: 4px;
+        }
+
+        p {
+            color: #2e1c0b;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        p.soft {
+            background: #fdf5ec;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border: 1px solid #f0dcc8;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .highlight-list li {
+            background: #fffaf3;
+            padding: 1rem 1.1rem;
+            border-radius: 24px;
+            border: 1px solid #eddac7;
+            font-weight: 450;
+            color: #4d2c12;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 6px rgba(210, 150, 80, 0.08);
+        }
+
+        .highlight-list li::before {
+            content: '▹';
+            color: #c9823e;
+            font-size: 1.2rem;
+        }
+
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .badge {
+            background: #f1e0ce;
+            color: #4a2b0f;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 470;
+            letter-spacing: 0.01em;
+            border: 1px solid #e3cbb4;
+        }
+
+        .link-btn {
+            display: inline-block;
+            background: linear-gradient(155deg, #f1cfb0, #e8bc97);
+            color: #3e210b;
+            padding: 0.55rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 1px solid #dbaa7c;
+            box-shadow: 0 4px 8px rgba(170, 100, 40, 0.10);
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            margin: 0.1rem 0.2rem;
+            cursor: default;
+        }
+
+        .link-btn:hover {
+            background: linear-gradient(155deg, #e6c09e, #dbb086);
+            box-shadow: 0 6px 12px rgba(140, 80, 30, 0.15);
+            transform: scale(1.01);
+        }
+
+        .faq-item {
+            margin: 1.2rem 0;
+            padding: 0.8rem 1rem;
+            background: #fbf6ef;
+            border-radius: 20px;
+            border-left: 5px solid #dbaa7c;
+        }
+
+        .faq-item strong {
+            color: #633d1b;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-weight: 550;
+        }
+
+        .faq-item p {
+            margin: 0.2rem 0 0 0;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ecdac8;
+            margin: 2rem 0 1rem;
+            opacity: 0.6;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #6d4d2d;
+            background: #f5eadc;
+            border-radius: 18px;
+            padding: 0.6rem 1.2rem;
+            display: inline-block;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #755335;
+            font-size: 0.9rem;
+            margin-top: 1.8rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed #dcc2ab;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <!-- hero -->
+        <div class="hero">
+            <h1>从查询到参照 · 爱游戏</h1>
+            <div class="sub">日常资讯的延伸，不止于比分与赛历</div>
+        </div>
+
+        <!-- 摘要式开篇 -->
+        <p>
+            体育资讯的获取，往往从一次快速查询开始：某场赛果、联赛积分、球员数据……但更多时候，我们需要的是一份可供对照、延伸阅读的参考信息。<strong>爱游戏</strong>正是以此为切入点，聚合了赛事动态、队伍近况以及观察视角，让日常浏览从临时查询转向持续关注。
+        </p>
+
+        <!-- 亮点：以卡片式网格呈现 -->
+        <div class="section-title">内容亮点</div>
+        <ul class="highlight-list">
+            <li>赛果与数据对照 —— 便于横向比较</li>
+            <li>延伸阅读板块 —— 背景、趋势与短评</li>
+            <li>多赛事覆盖 —— 足球、篮球、网球等主流项目</li>
+            <li>日常更新节奏 —— 信息密度适中，非轰炸式推送</li>
+        </ul>
+
+        <!-- 使用建议 / 场景 -->
+        <div class="section-title">使用场景建议</div>
+        <p class="soft">
+            <strong>赛前查询与赛后对照：</strong> 查看近期交锋记录、主客场表现，辅助个人判断。<br>
+            <strong>延伸阅读时段：</strong> 赛事间歇期浏览相关分析或队伍动向，保持信息连贯。<br>
+            <strong>多终端同步：</strong> 页面结构适配移动端与桌面，可在碎片时间里快速查阅。
+        </p>
+
+        <!-- 自然嵌入链接的句子：符合第7点 -->
+        <p>
+            如果你希望在日常资讯流中留出一块可供对照与延伸的版块，可以试试将 <a href="https://sport-online-igame.com" class="link-btn">爱游戏</a> 加入浏览清单。它的页面以信息罗列为主，没有冗余诱导，适合静下来慢慢翻阅。
+        </p>
+
+        <!-- FAQ摘要 差异化 -->
+        <div class="section-title">常见想法摘要</div>
+        <div class="faq-item">
+            <strong>内容更新频率如何？</strong>
+            <p>保持每日或隔日更新，重点赛事前后会有更密集的动态，整体节奏平缓，不制造信息焦虑。</p>
+        </div>
+        <div class="faq-item">
+            <strong>是否需要注册或登录？</strong>
+            <p>浏览公开资讯无需注册，可自由查看赛果、数据对照等版块。部分延伸阅读内容以开放形式呈现。</p>
+        </div>
+        <div class="faq-item">
+            <strong>适合哪些体育爱好者？</strong>
+            <p>适合关注赛事数据、喜欢对照历史记录、希望延伸阅读背景信息的用户。无论是单项目深度关注还是多项目泛览，均有可读内容。</p>
+        </div>
+
+        <!-- 可信但克制的说明 -->
+        <hr>
+        <div class="section-title">关于信息呈现</div>
+        <p>
+            页面所展示的赛果、数据及延伸内容均来自公开整理与客观罗列，不包含预测、保证或引导性建议。我们建议读者结合多方信源交叉对照，保持独立的判断习惯。作为日常查询与延伸的辅助工具，<a href="https://sport-online-igame.com" class="link-btn">爱游戏</a> 仅提供集中的信息窗口，不替代深度分析或官方公告。
+        </p>
+
+        <!-- 小标签 + 克制提示 -->
+        <div class="badge-group">
+            <span class="badge">资讯聚合</span>
+            <span class="badge">对照阅读</span>
+            <span class="badge">无诱导内容</span>
+            <span class="badge">开放浏览</span>
+        </div>
+
+        <div class="note">
+            ⚡ 本页为产品说明式介绍，内容仅供功能参考。
+        </div>
+
+        <div class="footer-note">
+            日常查询 · 对照 · 延伸阅读
+        </div>
+    </div>
+</div>
+</body>
+</html>
