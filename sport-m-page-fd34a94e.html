@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 运动与游戏的交汇站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #ffd194 0%, #ffb347 60%, #f57c00 100%);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .card {
+      max-width: 880px;
+      width: 100%;
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 40px;
+      box-shadow: 0 20px 40px rgba(180, 80, 0, 0.25), 0 10px 20px rgba(0,0,0,0.08);
+      padding: 2.8rem 2.5rem;
+      transition: box-shadow 0.2s ease;
+    }
+    @media (max-width: 540px) {
+      .card {
+        padding: 2rem 1.2rem;
+        border-radius: 28px;
+      }
+    }
+    .hero {
+      margin-bottom: 2rem;
+    }
+    .hero p:first-child {
+      font-size: 1.15rem;
+      font-weight: 450;
+      letter-spacing: 0.3px;
+      color: #b95b0e;
+      margin-bottom: 0.3rem;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #3c2a1a;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #f57c00, #d84315);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .tagline {
+      font-size: 1.1rem;
+      color: #5f4a33;
+      border-left: 4px solid #f57c00;
+      padding-left: 1rem;
+      margin: 0.6rem 0 1.8rem 0;
+    }
+    .desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2e241c;
+      margin-bottom: 2.2rem;
+    }
+    .desc a {
+      color: #d84315;
+      text-decoration: none;
+      font-weight: 550;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, background 0.2s;
+      padding: 0 0.1rem;
+    }
+    .desc a:hover {
+      border-bottom: 2px solid #f57c00;
+      background: #fff1e0;
+      border-radius: 4px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2rem;
+      margin: 2.4rem 0 2rem;
+    }
+    @media (max-width: 600px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+    }
+    .feature-item {
+      background: #fef7f0;
+      border-radius: 24px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 4px 8px rgba(200, 100, 20, 0.06);
+      transition: transform 0.15s, background 0.2s;
+      border: 1px solid #ffe7d4;
+    }
+    .feature-item:hover {
+      transform: translateY(-3px);
+      background: #fff4e8;
+    }
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #7f4010;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .feature-item h3::before {
+      content: "▸";
+      color: #f57c00;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #4d3a2b;
+      line-height: 1.55;
+    }
+    .closing {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #eedbca;
+      font-size: 0.98rem;
+      color: #4d3a2b;
+      line-height: 1.7;
+    }
+    .closing strong {
+      color: #8f4b1a;
+    }
+    .faq-mini {
+      background: #fcf3ea;
+      border-radius: 28px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 0.5rem;
+    }
+    .faq-mini p {
+      font-size: 0.95rem;
+      color: #3f2f21;
+      margin-bottom: 0.3rem;
+    }
+    .faq-mini p:last-child {
+      margin-bottom: 0;
+    }
+    .faq-mini strong {
+      color: #b95b0e;
+    }
+    .muted {
+      opacity: 0.55;
+      font-size: 0.8rem;
+      margin-top: 1.2rem;
+      text-align: right;
+      color: #6f4d2b;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="hero">
+    <p>—— 简短，但足够清晰</p>
+    <h1>运动与游戏，<span>一站即达</span></h1>
+    <div class="tagline">如果你在找「能玩又能看赛事的平台」，这里就是起点。</div>
+  </div>
+
+  <div class="desc">
+    <p>很多用户第一次打开一个网站时，最先问的是：<em>“这是干什么的？”</em><br>
+    没有多余渲染，<a href="https://sport-m-igame.com">爱游戏</a> 直接把体育竞技与休闲娱乐整合在同一个界面里。无论你是想快速浏览比分、了解热门赛事，还是寻找轻度游戏放松，这个站点都提供了一条直路。信息层级清楚，入口直观，不需要反复猜按钮的含义——把时间留给内容本身。</p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>赛事动态</h3>
+      <p>足球、篮球、网球等主流联赛的实时数据与走势，排版干净，一眼抓住重点。</p>
+    </div>
+    <div class="feature-item">
+      <h3>轻量互动</h3>
+      <p>内嵌数款适合碎片时间的趣味游戏，不占内存，打开即玩，与体育内容自然穿插。</p>
+    </div>
+    <div class="feature-item">
+      <h3>无过度注册</h3>
+      <p>大部分功能无需繁琐注册，降低使用门槛，即看即走，尊重你的隐私与时间。</p>
+    </div>
+    <div class="feature-item">
+      <h3>视觉一致</h3>
+      <p>界面采用暖色基调与圆润控件，操作反馈柔和，减少认知负担，适合长时间浏览。</p>
+    </div>
+  </div>
+
+  <div class="faq-mini">
+    <p><strong>❓ 常见疑问摘要</strong></p>
+    <p>• 网站偏向体育数据还是游戏？—— 两者并行，按板块区分，你可以在导航自由切换。</p>
+    <p>• 需要下载客户端吗？—— 完全基于浏览器，<a href="https://sport-m-igame.com" style="color:#d84315;text-decoration:underline;font-weight:500;">爱游戏</a> 不强制安装任何软件。</p>
+    <p>• 内容更新频率？—— 赛事数据跟随官方实时刷新，游戏内容不定期扩充。</p>
+  </div>
+
+  <div class="closing">
+    <strong>温和收束</strong> —— 一个好的工具网站应该像一把好用的钥匙：你不必反复研究它，只需要用它打开想去的门。<br>
+    如果你恰好喜欢运动，也偶尔玩点小游戏，不妨把 <strong><a href="https://sport-m-igame.com" style="color:#d84315;text-decoration:none;border-bottom:1px solid #d84315;">爱游戏</a></strong> 放进书签。它不承诺奇迹，但会诚实呈现你需要的。
+  </div>
+
+  <div class="muted">· 简洁 · 专业 · 信息优先</div>
+</div>
+</body>
+</html>
